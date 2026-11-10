@@ -4,7 +4,7 @@ Central web para registrar, priorizar e acompanhar ocorrências de elevadores, d
 
 Projeto do **Challenge FIAP 2026 com a OTIS** (Engenharia de Software).
 
-> **Situação atual:** telas de acesso (A1, A2, A3) e tela de Despacho prontas **só no visual**, com dados de exemplo. A ligação com a API e o banco vem nas próximas etapas.
+> **Situação atual:** telas de acesso (A1, A2, A3), Despacho, portaria pelo QR (B) e celular do técnico (T) prontas **só no visual**, com dados de exemplo. A ligação com a API e o banco vem nas próximas etapas.
 
 ## Tecnologias
 
@@ -47,8 +47,8 @@ Teste: `http://127.0.0.1:5000/api/ping` deve responder `{"status":"ok"}`.
 |---|---|---|
 | Admin | admin@casademaquinas.com | demo1234 |
 | Operador | operador@casademaquinas.com | demo1234 |
-| Técnico com resgate | (11) 98000-1111 | demo1234 |
-| Técnico sem resgate | (11) 98000-4444 | demo1234 |
+| Técnico (Carlos Mendes) | (11) 98000-1111 | demo1234 |
+| Técnico (Rafael Souza) | (11) 98000-4444 | demo1234 |
 
 ## Estrutura de pastas
 
@@ -65,6 +65,8 @@ src/
     LoginCentral.jsx        tela A1
     LoginTecnico.jsx        tela A2 (celular)
     Despacho.jsx            despacho do admin e tela A3 (operador)
+    Portaria.jsx            telas B1 a B3 (portaria pelo QR, celular)
+    Tecnico.jsx             telas T1 a T7 (celular do técnico)
 ```
 
 Cada componente e cada página tem o seu próprio arquivo `.css` ao lado.

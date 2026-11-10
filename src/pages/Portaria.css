@@ -1,0 +1,105 @@
+/* Telas B - Portaria (celular) */
+
+/* Faixa de cima com o elevador escaneado */
+.portaria-elevador {
+  padding: 18px var(--espaco-20) 14px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.portaria-elevador .titulo-h1-celular {
+  margin: 2px 0;
+}
+
+.portaria-endereco {
+  font-size: 12px;
+  color: var(--cor-cinza-claro);
+}
+
+.portaria-pergunta {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ---------- B1: lista de opções ---------- */
+
+.portaria-tipos {
+  gap: 10px;
+}
+
+/* Cada opção é um botão grande, fácil de tocar (56 px) */
+.portaria-opcao {
+  min-height: 56px;
+  padding: 0 var(--espaco-16);
+  font-family: var(--fonte-principal);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--cor-primaria);
+  background-color: var(--cor-branco);
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--canto-g);
+}
+
+.portaria-opcao:hover {
+  background-color: var(--cor-fundo-2);
+}
+
+/* "Tem gente presa": vermelho, porque é a mais urgente */
+.portaria-opcao.urgente {
+  color: var(--cor-branco);
+  background-color: var(--p1-texto);
+  border-color: var(--p1-texto);
+}
+
+/* ---------- B2: grade de andares ---------- */
+
+/* 5 colunas do mesmo tamanho */
+.portaria-andares {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--espaco-8);
+}
+
+.portaria-andar {
+  min-height: 48px;
+  font-family: var(--fonte-codigo);
+  font-size: 16px;
+  color: var(--cor-primaria);
+  background-color: var(--cor-branco);
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--canto-g);
+}
+
+.portaria-andar:hover {
+  background-color: var(--cor-fundo-2);
+}
+
+/* Parece um link, mas é um botão (tem área de toque de 48 px) */
+.portaria-nao-sei {
+  min-height: 48px;
+  font-family: var(--fonte-principal);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cor-link);
+  text-decoration: underline;
+  background: transparent;
+  border: 0;
+}
+
+/* ---------- B3: chamado aberto ---------- */
+
+.portaria-protocolo {
+  font-size: 15px;
+  color: var(--cor-primaria);
+}
+
+.portaria-mensagem {
+  line-height: 1.5;
+}
+
+.portaria-dicas {
+  margin: 0;
+  padding-left: var(--espaco-20);
+  line-height: 1.6;
+}

@@ -230,10 +230,32 @@ a:hover {
   font-weight: 600;
 }
 
-/* Urgente no celular: botão grande, 56 px */
+/* Botão principal do celular: 56 px (ex.: "Entrar", "Cheguei") */
 .btn-celular {
   min-height: 56px;
   font-size: 17px;
+  border-radius: var(--canto-g);
+}
+
+/* Botão de apoio do celular: 48 px (ex.: "Abrir rota no mapa") */
+.btn-grande {
+  min-height: 48px;
+  font-size: 16px;
+  border-radius: var(--canto-g);
+}
+
+/* Botões "Simular: ..." - só existem para a demonstração.
+   A borda tracejada mostra que não fazem parte do sistema de verdade. */
+.btn-simular {
+  --bs-btn-color: var(--cor-primaria);
+  --bs-btn-bg: var(--cor-branco);
+  --bs-btn-border-color: var(--cor-borda-forte);
+  --bs-btn-hover-color: var(--cor-primaria);
+  --bs-btn-hover-bg: var(--cor-fundo-2);
+  --bs-btn-hover-border-color: var(--cor-borda-forte);
+  min-height: 44px;
+  font-size: 15px;
+  border-style: dashed;
   border-radius: var(--canto-g);
 }
 
@@ -302,13 +324,15 @@ textarea.form-control {
   border-radius: var(--canto-p);
 }
 
-.status-aberta     { background-color: var(--status-aberta-fundo);     color: var(--status-aberta-texto); }
+.status-aberta    { background-color: var(--status-aberta-fundo);    color: var(--status-aberta-texto); }
 .status-andamento { background-color: var(--status-andamento-fundo); color: var(--status-andamento-texto); }
-.status-confirmar  { background-color: var(--cor-selecionado);     color: var(--alerta-texto); }
-.status-resolvida     { background-color: var(--status-resolvida-fundo);     color: var(--status-resolvida-texto); }
+.status-confirmar { background-color: var(--cor-selecionado);        color: var(--alerta-texto); }
+.status-resolvida { background-color: var(--status-resolvida-fundo); color: var(--status-resolvida-texto); }
 
 /* =========================================================
-   CAIXA DE ALERTA (amarela)
+   CAIXAS DE MENSAGEM
+   A cor diz o tipo de recado: amarelo = esperando,
+   vermelho = urgente ou erro, verde = deu certo, cinza = informação
    ========================================================= */
 
 .caixa-alerta {
@@ -316,4 +340,74 @@ textarea.form-control {
   background-color: var(--cor-selecionado);
   border: 1px solid var(--alerta-borda);
   border-radius: var(--canto-m);
+}
+
+.caixa-perigo,
+.caixa-sucesso,
+.caixa-cinza {
+  padding: 12px 14px;
+  border-radius: var(--canto-g);
+}
+
+.caixa-perigo  { background-color: var(--p1-fundo); }
+.caixa-sucesso { background-color: var(--status-resolvida-fundo); }
+.caixa-cinza   { background-color: var(--cor-fundo-2); }
+
+/* =========================================================
+   TELAS DE CELULAR (login do técnico, portaria, técnico)
+   No computador ficam com a largura de um celular, no meio.
+   ========================================================= */
+
+.tela-celular {
+  display: flex;
+  flex-direction: column;
+  max-width: 390px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-size: 15px;
+  background-color: var(--cor-branco);
+}
+
+/* Parte de baixo da tela: ocupa o espaço que sobra */
+.tela-celular-corpo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: var(--espaco-20);
+}
+
+/* No celular os campos são maiores (mínimo 15 px, fácil de tocar) */
+.tela-celular .form-label {
+  font-size: 15px;
+}
+
+.tela-celular .form-control {
+  min-height: 48px;
+  padding: 0 12px;
+  font-size: 16px;
+  border-radius: var(--canto-g);
+}
+
+.tela-celular textarea.form-control {
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+/* Checkbox grande, com área de toque de 44 px */
+.tela-celular .form-check {
+  min-height: 44px;
+  padding-left: 0;
+}
+
+.tela-celular .form-check-input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  border-color: var(--cor-borda-forte);
+}
+
+.tela-celular .form-check-input:checked {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
 }

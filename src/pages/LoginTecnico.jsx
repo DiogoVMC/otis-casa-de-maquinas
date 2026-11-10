@@ -1,12 +1,13 @@
 import './LoginTecnico.css'
 
 // Tela A2 - Login do técnico (feita para o celular, 390 px)
+// A classe "tela-celular" vem do index.css e é a mesma das telas B e T.
 function LoginTecnico() {
   return (
-    <div className="login-tecnico min-vh-100 d-flex flex-column">
+    <div className="tela-celular">
       <div className="faixa-amarela"></div>
 
-      <form className="login-tecnico-form flex-grow-1 d-flex flex-column gap-3">
+      <form className="tela-celular-corpo login-tecnico-form">
         <span className="logo">Casa de Máquinas</span>
         <h1 className="titulo-h1-celular mb-2">Acesso do técnico</h1>
 
@@ -21,8 +22,8 @@ function LoginTecnico() {
         </div>
 
         {/* form-check é a classe do Bootstrap para checkbox */}
-        <div className="form-check login-tecnico-check d-flex align-items-center gap-2">
-          <input id="manter" type="checkbox" className="form-check-input m-0" defaultChecked />
+        <div className="form-check d-flex align-items-center gap-2">
+          <input id="manter" type="checkbox" className="form-check-input" defaultChecked />
           <label htmlFor="manter" className="form-check-label">Manter conectado neste celular</label>
         </div>
 

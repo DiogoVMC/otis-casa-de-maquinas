@@ -1,0 +1,92 @@
+/* Telas T - Celular do técnico */
+
+/* Barra fina com o nome do técnico e "Sair" */
+.tecnico-barra {
+  padding: 10px var(--espaco-20);
+  font-size: 13px;
+  color: var(--cor-secundaria);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Resumo do chamado no topo */
+.tecnico-chamado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+  padding: 14px var(--espaco-20) 12px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.tecnico-chamado .titulo-h1-celular {
+  margin: 0;
+}
+
+.tecnico-status {
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+/* Lista de dados em 2 colunas: nome | valor */
+.tecnico-dados {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--espaco-8) 14px;
+}
+
+.tecnico-dados dt {
+  font-weight: 400;
+  color: var(--cor-secundaria);
+}
+
+.tecnico-dados dd {
+  margin: 0;
+}
+
+/* Textos das caixas de mensagem com mais espaço entre linhas */
+.tecnico-mensagem {
+  line-height: 1.5;
+}
+
+/* ---------- T2: leitor de QR ---------- */
+
+/* Fundo escuro que ocupa o espaço livre, com a mira no meio */
+.leitor-qr {
+  position: relative;
+  flex-grow: 1;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-primaria);
+  border-radius: var(--canto-g);
+}
+
+/* Quadrado amarelo da mira */
+.leitor-qr-mira {
+  width: 200px;
+  height: 200px;
+  border: 3px solid var(--cor-amarelo);
+  border-radius: var(--canto-g);
+}
+
+.leitor-qr-texto {
+  position: absolute;
+  bottom: var(--espaco-16);
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  text-align: center;
+  color: var(--cor-branco);
+}
+
+/* Botão amarelo "QR certo" (só nesta tela) */
+.tecnico-btn-amarelo {
+  --bs-btn-color: var(--cor-primaria);
+  --bs-btn-bg: var(--cor-amarelo);
+  --bs-btn-border-color: var(--cor-amarelo);
+  --bs-btn-hover-color: var(--cor-primaria);
+  --bs-btn-hover-bg: #e0b400;
+  --bs-btn-hover-border-color: #e0b400;
+  min-height: 52px;
+  font-weight: 600;
+}
