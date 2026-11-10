@@ -1,0 +1,42 @@
+/* Tela A2 - Login do técnico (celular) */
+
+/* No computador a tela fica com a largura de um celular, no meio */
+.login-tecnico {
+  max-width: 390px;
+  margin: 0 auto;
+  background-color: var(--cor-branco);
+}
+
+.login-tecnico-form {
+  padding: 48px var(--espaco-20) var(--espaco-24);
+}
+
+/* No celular os textos e campos são maiores (mínimo 15 px) */
+.login-tecnico .form-label {
+  font-size: 15px;
+}
+
+.login-tecnico .form-control {
+  min-height: 48px;
+  padding: 0 12px;
+  font-size: 16px;
+  border-radius: var(--canto-g);
+}
+
+/* Checkbox grande, fácil de tocar (área de 44 px) */
+.login-tecnico-check {
+  min-height: 44px;
+  padding-left: 0;
+  font-size: 15px;
+}
+
+.login-tecnico-check .form-check-input {
+  width: 22px;
+  height: 22px;
+  border-color: var(--cor-borda-forte);
+}
+
+.login-tecnico-check .form-check-input:checked {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}

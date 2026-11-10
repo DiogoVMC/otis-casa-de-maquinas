@@ -1,111 +1,319 @@
+/* =========================================================
+   ESTILOS UNIVERSAIS - Casa de Máquinas
+   Tudo aqui vem do guia de estilo do Figma.
+   Se uma cor ou fonte mudar, muda só aqui.
+   ========================================================= */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* ---------- Fontes ---------- */
+  --fonte-principal: 'Barlow', system-ui, sans-serif;               /* texto, botões, campos */
+  --fonte-titulo: 'Barlow Semi Condensed', 'Barlow', sans-serif;    /* títulos e logo */
+  --fonte-codigo: 'IBM Plex Mono', monospace;                       /* códigos, horários, P1-P4 */
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* ---------- Cores base ---------- */
+  --cor-primaria: #18181b;          /* Tinta: texto e botão principal */
+  --cor-primaria-2: #3f3f46;        /* Tinta 2: texto de apoio */
+  --cor-secundaria: #52525b;        /* Cinza texto: secundário, rótulos */
+  --cor-cinza-claro: #71717a;       /* Cinza claro: notas, horários */
+  --cor-borda-forte: #a1a1aa;       /* bordas de campo e botão neutro */
+  --cor-borda: #e4e4e7;             /* divisões e cartões */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* ---------- Fundos e marca ---------- */
+  --cor-branco: #ffffff;
+  --cor-fundo-2: #f4f4f5;           /* caixas de apoio, fundo do login */
+  --cor-divisoria: #f0f0f1;         /* linhas das listas */
+  --cor-amarelo: #f2c200;           /* faixa amarela do topo */
+  --cor-selecionado: #fff6d6;       /* linha selecionada e alertas */
+  --cor-link: #1f4fbf;
+  --cor-link-hover: #163a8c;        /* link com o mouse em cima */
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  /* ---------- Prioridade (fundo / texto) ---------- */
+  --p1-fundo: #fee4e2;  --p1-texto: #b42318;
+  --p2-fundo: #fdead7;  --p2-texto: #9c2a10;
+  --p3-fundo: #fef7c3;  --p3-texto: #7a4d00;
+  --p4-fundo: #f4f4f5;  --p4-texto: #3f3f46;
+
+  /* ---------- Alerta (reincidência, confirmar) ---------- */
+  --alerta-borda: #e9c95c;
+  --alerta-texto: #8a5a00;
+
+  /* ---------- Status (fundo / texto) ---------- */
+  --status-aberta-fundo: #dce7fb;      --status-aberta-texto: #163a8c;
+  --status-andamento-fundo: #ede7fb;   --status-andamento-texto: #4c1d95;
+  --status-resolvida-fundo: #dcf2e4;   --status-resolvida-texto: #166534;
+  --cor-sucesso: #166534;           /* botão "Confirmar e encerrar" */
+  --cor-whatsapp: #1b7f4b;
+
+  /* ---------- Espaçamentos ---------- */
+  --espaco-4: 4px;
+  --espaco-8: 8px;
+  --espaco-12: 12px;
+  --espaco-16: 16px;
+  --espaco-20: 20px;
+  --espaco-24: 24px;
+  --espaco-32: 32px;
+
+  /* ---------- Cantos e sombra ---------- */
+  --canto-p: 2px;                   /* pequeno: etiquetas */
+  --canto-m: 3px;                   /* médio: botões e campos */
+  --canto-g: 4px;                   /* grande: janela e celular */
+  --sombra-janela: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
+/* =========================================================
+   BASE
+   ========================================================= */
 
 body {
   margin: 0;
+  font-family: var(--fonte-principal);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--cor-primaria);
+  background-color: var(--cor-branco);
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+a {
+  color: var(--cor-link);
+  font-weight: 600;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+a:hover {
+  color: var(--cor-link-hover);
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+/* =========================================================
+   TIPOGRAFIA (mesmos nomes dos Text styles do Figma)
+   ========================================================= */
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
+
+.titulo-h1 {
   margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
+.titulo-h1-celular {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+}
+
+.titulo-h2 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 700;
+}
+
+/* "Rótulo de seção": aquele título pequeno em maiúsculas */
+.rotulo-secao {
+  margin: 0;
+  font-family: var(--fonte-principal);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor-secundaria);
+}
+
+.texto {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.texto-secundario {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--cor-secundaria);
+}
+
+.nota {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--cor-cinza-claro);
+}
+
+.codigo {
+  font-family: var(--fonte-codigo);
+  font-size: 13px;
+  color: var(--cor-secundaria);
+}
+
+/* =========================================================
+   FAIXA AMARELA (vai no topo de todas as telas)
+   ========================================================= */
+
+.faixa-amarela {
+  height: 4px;
+  background-color: var(--cor-amarelo);
+}
+
+/* =========================================================
+   BOTÕES
+   Usamos a classe .btn do Bootstrap (tamanho, alinhamento,
+   cursor) e trocamos as cores pelas variáveis --bs-btn-*.
+   É assim que o próprio Bootstrap ensina a criar um botão novo.
+   ========================================================= */
+
+.btn {
   display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-principal);
+  font-size: 14px;
+  border-radius: var(--canto-m);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Principal: preto, 44 px */
+.btn-principal {
+  --bs-btn-color: var(--cor-branco);
+  --bs-btn-bg: var(--cor-primaria);
+  --bs-btn-border-color: var(--cor-primaria);
+  --bs-btn-hover-color: var(--cor-branco);
+  --bs-btn-hover-bg: var(--cor-primaria-2);
+  --bs-btn-hover-border-color: var(--cor-primaria-2);
+  --bs-btn-active-color: var(--cor-branco);
+  --bs-btn-active-bg: var(--cor-primaria-2);
+  min-height: 44px;
+  padding: 0 18px;
+  font-weight: 600;
+}
+
+/* Secundário: branco com borda preta, 40 px (ex.: "Enviar") */
+.btn-secundario {
+  --bs-btn-color: var(--cor-primaria);
+  --bs-btn-bg: var(--cor-branco);
+  --bs-btn-border-color: var(--cor-primaria);
+  --bs-btn-hover-color: var(--cor-branco);
+  --bs-btn-hover-bg: var(--cor-primaria);
+  --bs-btn-hover-border-color: var(--cor-primaria);
+  min-height: 40px;
+  padding: 0 12px;
+  font-weight: 600;
+}
+
+/* Neutro: branco com borda cinza, 40 px (ex.: "Cancelar") */
+.btn-neutro {
+  --bs-btn-color: var(--cor-primaria);
+  --bs-btn-bg: var(--cor-branco);
+  --bs-btn-border-color: var(--cor-borda-forte);
+  --bs-btn-hover-color: var(--cor-primaria);
+  --bs-btn-hover-bg: var(--cor-fundo-2);
+  --bs-btn-hover-border-color: var(--cor-borda-forte);
+  min-height: 40px;
+  padding: 0 14px;
+}
+
+/* Concluir: verde, 44 px */
+.btn-concluir {
+  --bs-btn-color: var(--cor-branco);
+  --bs-btn-bg: var(--cor-sucesso);
+  --bs-btn-border-color: var(--cor-sucesso);
+  --bs-btn-hover-color: var(--cor-branco);
+  --bs-btn-hover-bg: #14532d;
+  --bs-btn-hover-border-color: #14532d;
+  min-height: 44px;
+  padding: 0 18px;
+  font-weight: 600;
+}
+
+/* Urgente no celular: botão grande, 56 px */
+.btn-celular {
+  min-height: 56px;
+  font-size: 17px;
+  border-radius: var(--canto-g);
+}
+
+/* =========================================================
+   CAMPOS (por cima do .form-control do Bootstrap)
+   ========================================================= */
+
+.form-label {
+  margin-bottom: var(--espaco-4);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  min-height: 40px;
+  padding: 0 10px;
+  font-family: var(--fonte-principal);
+  font-size: 14px;
+  color: var(--cor-primaria);
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--canto-m);
+}
+
+/* textarea não pode ter padding 0 em cima e embaixo */
+textarea.form-control {
+  padding: 10px;
+}
+
+/* Foco: borda azul de 2 px, sem a sombra do Bootstrap */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--cor-link);
+  box-shadow: 0 0 0 1px var(--cor-link);
+}
+
+/* =========================================================
+   ETIQUETAS DE PRIORIDADE (P1 a P4)
+   Sempre com texto, não só com cor (RNF04)
+   ========================================================= */
+
+.etiqueta-prioridade {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: var(--fonte-codigo);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: var(--canto-p);
+}
+
+.etiqueta-p1 { background-color: var(--p1-fundo); color: var(--p1-texto); }
+.etiqueta-p2 { background-color: var(--p2-fundo); color: var(--p2-texto); }
+.etiqueta-p3 { background-color: var(--p3-fundo); color: var(--p3-texto); }
+.etiqueta-p4 { background-color: var(--p4-fundo); color: var(--p4-texto); }
+
+/* =========================================================
+   ETIQUETAS DE STATUS
+   ========================================================= */
+
+.etiqueta-status {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--canto-p);
+}
+
+.status-aberta     { background-color: var(--status-aberta-fundo);     color: var(--status-aberta-texto); }
+.status-andamento { background-color: var(--status-andamento-fundo); color: var(--status-andamento-texto); }
+.status-confirmar  { background-color: var(--cor-selecionado);     color: var(--alerta-texto); }
+.status-resolvida     { background-color: var(--status-resolvida-fundo);     color: var(--status-resolvida-texto); }
+
+/* =========================================================
+   CAIXA DE ALERTA (amarela)
+   ========================================================= */
+
+.caixa-alerta {
+  padding: 10px 14px;
+  background-color: var(--cor-selecionado);
+  border: 1px solid var(--alerta-borda);
+  border-radius: var(--canto-m);
 }

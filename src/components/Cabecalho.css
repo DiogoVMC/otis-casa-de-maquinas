@@ -1,0 +1,72 @@
+/* Cabeçalho da central */
+
+.cabecalho {
+  gap: var(--espaco-8) 28px;
+  padding: 10px var(--espaco-24);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.cabecalho-menu {
+  flex-wrap: wrap;
+  gap: var(--espaco-4);
+}
+
+/* Cada item do menu tem 40 px de altura */
+.cabecalho-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 12px;
+  font-weight: 400;
+  color: var(--cor-secundaria);
+  white-space: nowrap; /* "Relatório do turno" não quebra no meio */
+  text-decoration: none;
+  border-bottom: 2px solid transparent; /* reserva o espaço da linha */
+}
+
+.cabecalho-link:hover {
+  color: var(--cor-primaria);
+}
+
+/* Item ativo: preto, mais forte e com a linha embaixo */
+.cabecalho-link.ativo {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  border-bottom-color: var(--cor-primaria);
+}
+
+.cabecalho-usuario {
+  gap: 14px;
+  font-size: 13px;
+  color: var(--cor-secundaria);
+}
+
+/* No celular:
+   1ª linha: logo à esquerda, usuário e Sair à direita
+   2ª linha: o menu inteiro, numa linha só (arrasta para o lado se não couber) */
+@media (max-width: 760px) {
+  .cabecalho {
+    gap: var(--espaco-4) var(--espaco-8);
+    padding: var(--espaco-8) var(--espaco-16) 0;
+  }
+
+  .cabecalho-usuario {
+    order: 2;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  /* Os 4 itens dividem a largura da tela, sem sobrar nem cortar */
+  .cabecalho-menu {
+    order: 3;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow-x: auto; /* segurança para telas bem estreitas */
+  }
+
+  .cabecalho-link {
+    padding: 0 6px;
+    font-size: 13px;
+  }
+}

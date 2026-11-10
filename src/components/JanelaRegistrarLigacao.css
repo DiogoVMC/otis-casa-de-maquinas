@@ -1,0 +1,56 @@
+/* Janela "Registrar ligação" */
+
+/* Fundo escuro que cobre a tela inteira */
+.janela-fundo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px var(--espaco-16);
+  background-color: rgba(24, 24, 27, 0.5);
+}
+
+/* A janela branca */
+.janela {
+  width: 100%;
+  max-width: 620px;
+  background-color: var(--cor-branco);
+  border-radius: var(--canto-g);
+  box-shadow: var(--sombra-janela);
+}
+
+/* A faixa amarela acompanha o canto arredondado de cima */
+.janela-faixa {
+  border-radius: var(--canto-g) var(--canto-g) 0 0;
+}
+
+.janela-corpo {
+  gap: 14px;
+  padding: var(--espaco-20) var(--espaco-24);
+}
+
+.janela-fechar {
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 22px;
+  color: var(--cor-primaria);
+  background: transparent;
+  border: 0;
+}
+
+/* Caixa cinza com a prioridade calculada */
+.janela-prioridade {
+  padding: 10px 12px;
+  background-color: var(--cor-fundo-2);
+  border-radius: var(--canto-m);
+}
+
+/* "Cancelar" tem a mesma altura do botão principal (44 px) */
+.janela-cancelar {
+  min-height: 44px;
+  padding: 0 16px;
+}
